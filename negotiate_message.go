@@ -20,7 +20,9 @@ func NewNegotiateMessage() []byte {
 	m.NegotiateFlags = negotiateFlagNTLMSSPREQUESTTARGET |
 		negotiateFlagNTLMSSPNEGOTIATENTLM |
 		negotiateFlagNTLMSSPNEGOTIATEALWAYSSIGN |
-		negotiateFlagNTLMSSPNEGOTIATEUNICODE
+		negotiateFlagNTLMSSPNEGOTIATEUNICODE |
+		negotiateFlagNTLMNEGOTIATEOEM |
+		negotiateFlagNTLMSSPNEGOTIATEEXTENDEDSESSIONSECURITY
 
 	b := bytes.Buffer{}
 	err := binary.Write(&b, binary.LittleEndian, &m)
